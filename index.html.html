@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nelissa Bacarro | Virtual Assistant Portfolio</title>
+  <meta name="description" content="Nelissa Bacarro — Virtual Assistant with experience in quality assurance, administrative support, customer service, email management, data management, and team coordination.">
+  <style>
+    :root {
+      --coffee-dark: #4a2f24;
+      --coffee: #795548;
+      --coffee-light: #a9826d;
+      --cream: #f8f3ee;
+      --cream-2: #eee4dc;
+      --white: #fffdfb;
+      --text: #30231e;
+      --muted: #76655d;
+      --border: #ded0c6;
+      --shadow: 0 18px 45px rgba(74,47,36,.08);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.7;
+    }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1080px, calc(100% - 40px)); margin: auto; }
+    nav {
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(248,243,238,.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(121,85,72,.12);
+    }
+    .nav-inner {
+      min-height: 70px; display: flex; align-items: center; justify-content: space-between;
+    }
+    .brand { font-weight: 750; letter-spacing: -.02em; color: var(--coffee-dark); }
+    .nav-links { display: flex; gap: 28px; font-size: .9rem; color: var(--muted); }
+    .nav-links a:hover { color: var(--coffee-dark); }
+    .hero { padding: 110px 0 100px; }
+    .eyebrow {
+      display: inline-block; padding: 7px 13px; border: 1px solid var(--border);
+      border-radius: 999px; color: var(--coffee); font-size: .78rem; font-weight: 700;
+      letter-spacing: .09em; text-transform: uppercase; background: rgba(255,253,251,.5);
+    }
+    h1 {
+      max-width: 780px; margin-top: 22px; font-size: clamp(3rem, 7vw, 5.8rem);
+      line-height: .98; letter-spacing: -.065em; color: var(--coffee-dark);
+    }
+    .hero p { max-width: 670px; margin-top: 28px; font-size: 1.12rem; color: var(--muted); }
+    .actions { display: flex; gap: 12px; margin-top: 34px; flex-wrap: wrap; }
+    .button {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 12px 20px; border-radius: 10px; font-weight: 700; font-size: .92rem;
+      border: 1px solid var(--coffee-dark);
+    }
+    .button.primary { background: var(--coffee-dark); color: white; }
+    .button.secondary { color: var(--coffee-dark); background: transparent; }
+    section { padding: 82px 0; }
+    .section-label { color: var(--coffee); font-size: .78rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+    h2 { margin-top: 9px; font-size: clamp(2rem, 4vw, 3rem); letter-spacing: -.045em; color: var(--coffee-dark); }
+    .intro { max-width: 650px; margin-top: 16px; color: var(--muted); }
+    .about-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 55px; align-items: start; }
+    .about-copy p + p { margin-top: 16px; }
+    .quick-facts { display: grid; gap: 12px; }
+    .fact { background: var(--white); border: 1px solid var(--border); padding: 18px 20px; border-radius: 14px; box-shadow: var(--shadow); }
+    .fact strong { display: block; color: var(--coffee-dark); font-size: .9rem; }
+    .fact span { color: var(--muted); font-size: .88rem; }
+    .skills { background: var(--coffee-dark); color: white; }
+    .skills h2, .skills .section-label { color: white; }
+    .skills .intro { color: #ddcec5; }
+    .skill-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 35px; }
+    .skill { padding: 16px; border: 1px solid rgba(255,255,255,.16); border-radius: 12px; color: #f8eee8; font-size: .9rem; }
+    .work-grid { display: grid; gap: 16px; margin-top: 35px; }
+    .job {
+      background: var(--white); border: 1px solid var(--border); border-radius: 16px;
+      padding: 25px; display: grid; grid-template-columns: 240px 1fr; gap: 28px;
+    }
+    .job h3 { color: var(--coffee-dark); font-size: 1.05rem; }
+    .job .company { color: var(--coffee); font-weight: 700; font-size: .9rem; margin-top: 3px; }
+    .job .date { color: var(--muted); font-size: .83rem; margin-top: 5px; }
+    .job ul { padding-left: 18px; color: var(--muted); font-size: .92rem; }
+    .job li + li { margin-top: 5px; }
+    .services { background: var(--cream-2); }
+    .service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 35px; }
+    .service { background: var(--white); padding: 25px; border-radius: 16px; border: 1px solid var(--border); }
+    .service h3 { color: var(--coffee-dark); margin-bottom: 7px; }
+    .service p { color: var(--muted); font-size: .9rem; }
+    .tools { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 28px; }
+    .tag { border: 1px solid var(--border); background: var(--white); padding: 7px 11px; border-radius: 999px; font-size: .8rem; color: var(--muted); }
+    .contact { text-align: center; }
+    .contact p { max-width: 600px; margin: 16px auto 28px; color: var(--muted); }
+    footer { padding: 25px 0 35px; color: var(--muted); font-size: .8rem; border-top: 1px solid var(--border); }
+    footer .container { display: flex; justify-content: space-between; gap: 20px; }
+    @media (max-width: 800px) {
+      .nav-links { display: none; }
+      .hero { padding: 75px 0; }
+      .about-grid, .job { grid-template-columns: 1fr; }
+      .skill-grid { grid-template-columns: repeat(2, 1fr); }
+      .service-grid { grid-template-columns: 1fr; }
+      section { padding: 65px 0; }
+    }
+    @media (max-width: 480px) {
+      .container { width: min(100% - 28px, 1080px); }
+      .skill-grid { grid-template-columns: 1fr; }
+      h1 { font-size: 3.2rem; }
+      footer .container { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="container nav-inner">
+    <a class="brand" href="#home">Nelissa Bacarro</a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <section class="hero" id="home">
+    <div class="container">
+      <span class="eyebrow">Virtual Assistant · Quality Assurance</span>
+      <h1>Organized support.<br>Reliable execution.</h1>
+      <p>
+        I’m Nelissa, a Virtual Assistant with corporate experience in quality assurance,
+        administrative support, customer service, email management, and data coordination.
+      </p>
+      <div class="actions">
+        <a class="button primary" href="#contact">Let’s Work Together</a>
+        <a class="button secondary" href="#experience">View Experience</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container about-grid">
+      <div class="about-copy">
+        <span class="section-label">About Me</span>
+        <h2>Professional, detail-oriented, and dependable.</h2>
+        <p class="intro">
+          I bring hands-on experience supporting teams through organized communication,
+          accurate data handling, administrative coordination, and consistent follow-through.
+        </p>
+        <p class="intro">
+          My background in Quality Assurance and customer service has strengthened my
+          attention to detail, ability to prioritize urgent work, and confidence working
+          across teams and processes.
+        </p>
+      </div>
+      <div class="quick-facts">
+        <div class="fact"><strong>Quality Assurance</strong><span>3+ years</span></div>
+        <div class="fact"><strong>Customer Service</strong><span>6 years</span></div>
+        <div class="fact"><strong>Email Management</strong><span>100+ emails daily</span></div>
+        <div class="fact"><strong>Work Setup</strong><span>Dedicated home office · Full-time</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="skills">
+    <div class="container">
+      <span class="section-label">Core Skills</span>
+      <h2>What I can support.</h2>
+      <p class="intro">Practical administrative and communication support backed by real corporate experience.</p>
+      <div class="skill-grid">
+        <div class="skill">Administrative Support</div>
+        <div class="skill">Email Management</div>
+        <div class="skill">Data Entry</div>
+        <div class="skill">Data Management</div>
+        <div class="skill">Calendar Management</div>
+        <div class="skill">Meeting Scheduling</div>
+        <div class="skill">Report Preparation</div>
+        <div class="skill">Spreadsheets</div>
+        <div class="skill">Online Research</div>
+        <div class="skill">Team Administration</div>
+        <div class="skill">Google Workspace</div>
+        <div class="skill">Attention to Detail</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="services">
+    <div class="container">
+      <span class="section-label">Services</span>
+      <h2>How I can help.</h2>
+      <div class="service-grid">
+        <div class="service">
+          <h3>Administrative Support</h3>
+          <p>Organizing records, preparing documents, coordinating tasks, maintaining trackers, and supporting day-to-day operations.</p>
+        </div>
+        <div class="service">
+          <h3>Email & Communication</h3>
+          <p>Managing inboxes, prioritizing urgent requests, responding to inquiries, and keeping communication organized.</p>
+        </div>
+        <div class="service">
+          <h3>Data & Reports</h3>
+          <p>Accurate data entry, spreadsheet updates, report preparation, record maintenance, and routine quality checks.</p>
+        </div>
+      </div>
+
+      <div class="tools">
+        <span class="tag">Google Workspace</span><span class="tag">Microsoft 365</span>
+        <span class="tag">Notion</span><span class="tag">Airtable</span><span class="tag">Slack</span>
+        <span class="tag">Zoom</span><span class="tag">Calendly</span><span class="tag">HubSpot</span>
+        <span class="tag">Canva</span><span class="tag">ChatGPT</span><span class="tag">Zapier</span>
+        <span class="tag">Asana</span><span class="tag">Trello</span><span class="tag">ClickUp</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="container">
+      <span class="section-label">Experience</span>
+      <h2>Career background.</h2>
+      <div class="work-grid">
+        <article class="job">
+          <div><h3>Quality Assurance Specialist</h3><div class="company">Teleperformance Philippines</div><div class="date">Jan 2022 – Present</div></div>
+          <ul>
+            <li>Review 60+ customer interactions weekly.</li>
+            <li>Manage 100+ daily emails while maintaining Inbox Zero.</li>
+            <li>Reduced response time from 2 hours to 30 minutes.</li>
+            <li>Prioritize administrative tasks and urgent requests while meeting deadlines.</li>
+          </ul>
+        </article>
+        <article class="job">
+          <div><h3>Customer Care Representative</h3><div class="company">Teleperformance Philippines</div><div class="date">Sep 2017 – Dec 2021</div></div>
+          <ul>
+            <li>Handle daily customer calls averaging 8 minutes per interaction.</li>
+            <li>Resolve customer issues through cross-department coordination.</li>
+            <li>Mentor new team members on processes and guidelines.</li>
+            <li>Support teammates with daily customer service concerns.</li>
+          </ul>
+        </article>
+        <article class="job">
+          <div><h3>Email Processor Agent</h3><div class="company">Kudo Support Inc.</div><div class="date">Jul 2016 – May 2017</div></div>
+          <ul>
+            <li>Respond to customer inquiries through email.</li>
+            <li>Prepare and send recurring client reports.</li>
+            <li>Update daily trackers to maintain accurate records.</li>
+            <li>Conduct test calls to verify service quality and accuracy.</li>
+          </ul>
+        </article>
+        <article class="job">
+          <div><h3>HR Cadet Encoder</h3><div class="company">Timex Philippines, Inc.</div><div class="date">Jun 2015 – Mar 2016</div></div>
+          <ul>
+            <li>Enter HR documents accurately in Excel.</li>
+            <li>Organize and maintain HR files and records.</li>
+            <li>Contact applicants to coordinate exams and interviews.</li>
+            <li>Prepare meeting materials and route documents across departments.</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="container">
+      <span class="section-label">Contact</span>
+      <h2>Let’s work together.</h2>
+      <p>
+        Looking for reliable virtual support for your day-to-day operations?
+        I’d be happy to connect.
+      </p>
+      <div class="actions" style="justify-content:center">
+        <a class="button primary" href="mailto:nelissabacarro@gmail.com">Email Me</a>
+        <a class="button secondary" href="https://www.linkedin.com/in/nelissa-bacarro/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <span>© 2026 Nelissa Bacarro</span>
+    <span>Cebu, Philippines · Available for remote work</span>
+  </div>
+</footer>
+
+</body>
+</html>
